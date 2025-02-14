@@ -1,0 +1,72 @@
+﻿<Window x:Class="ElectronicsStore.Authorization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElectronicsStore"
+        mc:Ignorable="d"
+        Title="Авторизация"
+        WindowStartupLocation="CenterScreen" ResizeMode="NoResize"
+        SizeToContent="Height" Width="300"
+        Loaded="Window_Loaded">
+    <StackPanel>
+        <TextBlock x:Name="txtLoginRegister"
+                   Text="Войдите, чтобы продолжить"
+                   TextWrapping="Wrap" FontWeight="Bold" FontSize="18"
+                   HorizontalAlignment="Center" Margin="5"/>
+
+        <StackPanel x:Name="stpFio"
+                    Visibility="Collapsed">
+            <StackPanel Margin="5">
+                <Label Content="Фамилия"
+                       HorizontalAlignment="Left"/>
+                <TextBox x:Name="tbLastName"
+                         MaxLength="100"/>
+            </StackPanel>
+            
+            <StackPanel Margin="5">
+                <Label Content="Имя"
+                       HorizontalAlignment="Left"/>
+                <TextBox x:Name="tbFirstName"
+                         MaxLength="50"/>
+            </StackPanel>
+            
+            <StackPanel Margin="5">
+                <Label Content="Отчество (необязательно)"
+                       HorizontalAlignment="Left"/>
+                <TextBox x:Name="tbPatronymic"
+                         MaxLength="70"/>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Margin="5">
+            <Label Content="Электронная почта"
+                   HorizontalAlignment="Left"/>
+            <TextBox x:Name="tbEmail"
+                     MaxLength="256"/>
+        </StackPanel>
+
+        <StackPanel Margin="5">
+            <Label Content="Пароль"
+                   HorizontalAlignment="Left"/>
+            <PasswordBox x:Name="pbPassword"
+                         MaxLength="256"/>
+        </StackPanel>
+
+        <Button x:Name="btnLoginRegister"
+                Content="Войти"
+                IsDefault="True"
+                Margin="5"
+                Click="btnLoginRegister_Click"/>
+
+        <Button x:Name="btnLoginAsGuest"
+                Content="Войти как гость"
+                Margin="5"
+                Click="btnLoginAsGuest_Click"/>
+
+        <Button x:Name="btnHasAccount"
+                Content="Нет учётной записи?"
+                Margin="5"
+                Click="btnHasAccount_Click"/>
+    </StackPanel>
+</Window>

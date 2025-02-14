@@ -1,0 +1,52 @@
+﻿<Window x:Class="ElectronicsStore.AddEditProductWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ElectronicsStore"
+        mc:Ignorable="d"
+        Title="AddEditProductWindow"
+        WindowStartupLocation="CenterOwner"
+        Width="400" SizeToContent="Height"
+        Loaded="Window_Loaded">
+    <StackPanel Margin="5">
+        <Label Content="Название"
+               HorizontalAlignment="Left"/>
+        <TextBox x:Name="tbName"
+                 Text="{Binding Name}"
+                 MaxLength="500"/>
+        <Label Content="Описание"
+               HorizontalAlignment="Left"/>
+        <TextBox x:Name="tbDescription"
+                 Text="{Binding Description}"
+                 TextWrapping="Wrap"
+                 MaxLength="4000"
+                 Height="120"/>
+        <Label Content="Категория"
+               HorizontalAlignment="Left"/>
+        <ComboBox x:Name="cbCategories"
+                  SelectedItem="{Binding Category}"
+                  DisplayMemberPath="Name"/>
+        <Label Content="Цена"
+               HorizontalAlignment="Left"/>
+        <TextBox x:Name="tbPrice"
+                 Text="{Binding Price}"
+                 MaxLength="9"/>
+        <Label Content="Кол-во на складе"
+               HorizontalAlignment="Left"/>
+        <TextBox x:Name="tbStockQuantity"
+                 Text="{Binding StockQuantity}"
+                 MaxLength="9"/>
+
+        <StackPanel Orientation="Horizontal"
+                    HorizontalAlignment="Center">
+            <Button x:Name="btnAddEditProduct"
+                    Content="Добавить товар"
+                    Margin="5"
+                    Click="btnAddEditProduct_Click"/>
+            <Button Content="Отмена"
+                    Margin="5"
+                    Click="btnCancel_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>
